@@ -39,3 +39,14 @@
 11. Buka Halaman Instalasi, setelah perintah di atas sukses berjalan, silakan buka laptop atau HP yang berada di jaringan yang sama dengan Ubuntu Server tersebut, lalu buka browser dan ketik:
 
         http://192.168.115.2:3030
+12. Jika sudah berhasil dibuka, akan muncul halaman untuk masuk ke Adguard.
+13. klik tombol hijau "Mari mulai"
+14. Antarmuka Web (Web Interface): Pilih Semua antarmuka (All interfaces) dan biarkan port-nya tetap di angka 80.
+15. Server DNS: Pilih Semua antarmuka dan pastikan port-nya di angka 53.
+16. Klik Lanjut.
+17. Buat Username dan Password yang aman.
+18. Klik Lanjut.
+19. Setelah itu akan muncul halaman yang menampilkan panduan cara mengarahkan DNS di berbagai perangkat. Karena nantinya kita akan mengarahkan DNS ini secara terpusat, bisa sekadar membacanya lalu klik Lanjut.
+20. Selesai, Klik tombol Buka Dasbor (Open Dashboard).
+
+Noted: Setelah semua proses di atas selesai, fungsi port 3030 sudah tidak dipakai lagi. Untuk login harian ke depannya, cukup mengetikkan (http://192.168.115.2) (tanpa port) di browser.
