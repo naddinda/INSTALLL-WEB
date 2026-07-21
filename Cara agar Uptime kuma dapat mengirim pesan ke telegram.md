@@ -1,11 +1,11 @@
 Langkah 1: Buat Bot Telegram
 1. Buka aplikasi Telegram Anda, lalu cari akun bernama @BotFather (pastikan ada centang birunya).
-2. Klik Start, lalu ketik perintah: /newbot
+2. Klik Start, lalu ketik perintah:  /newbot
 3. Masukkan Nama Bot bebas (contoh: Alarm Kuma Saya).
 4. Masukkan Username Bot yang diakhiri kata bot (contoh:kaduskragon_kuma_bot).
 5. @BotFather akan mengirimkan pesan berisi HTTP API Token. Berbentuk deretan angka dan huruf seperti ini:
 
-        8864985665:AAEwCkE1hCAlhIk8G..... (Salin/Copy token ini).
+        8864985665:AAEwCkE1hCAlhIk8G..... (Salin/Copy tokennya).
 6. Klik link username bot Anda yang baru dibuat tadi, lalu klik Start / Mulai agar bot tersebut bisa mengirim pesan ke telegram.
 
 Langkah 2: Dapatkan Chat ID Anda
