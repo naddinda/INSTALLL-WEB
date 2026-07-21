@@ -47,5 +47,5 @@ Langkah 6: Cek apakah telegram dapat mengirim pesan saat ada modem yang down
 7. Jika sudah berhasil, ubah host name menjadi IP modem yang semula.
 8. Setelah indikator berwarna hijau, bot telegram mengirimkan pesan seperti ini:
 
-   [mgabdulsalam] [✅ Up]
+           [mgabdulsalam] [✅ Up]
 
