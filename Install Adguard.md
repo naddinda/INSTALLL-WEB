@@ -7,18 +7,22 @@
 6. Jalankan perintah-perintah berikut di terminal Ubuntu Server kamu secara berurutan:
 
         sudo systemctl stop systemd-resolved
+   Menghentikan layanan systemd-resolved yang sedang berjalan detik ini juga (secara real-time).
+   Port 53 yang tadinya "dikunci" atau dipakai oleh sistem bawaan Ubuntu akan langsung terlepas dan    menjadi bebas. Dengan begitu, AdGuard Home bisa langsung mengambil alih port tersebut tanpa         tertahan error port already in use.
    
         sudo systemctl disable systemd-resolved
-7. Ganti konfigurasi DNS internal Ubuntu agar menggunakan DNS publik sementara (misal Cloudflare), supaya servermu tetap bisa mendownload file Docker nanti:
+   Menonaktifkan layanan systemd-resolved agar tidak berjalan otomatis saat server dinyalakan ulang    (reboot/restart).
+   Mencegah masalah bentrok terjadi lagi di masa depan. Tanpa perintah ini, setiap kali server         Ubuntu kamu mati atau di-restart, layanan bawaan tersebut akan otomatis menyala kembali dan         membajak Port 53 dari AdGuard Home.
+8. Ganti konfigurasi DNS internal Ubuntu agar menggunakan DNS publik sementara (misal Cloudflare), supaya servermu tetap bisa mendownload file Docker nanti:
    
         sudo rm /etc/resolv.conf
         echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
-8. Buat folder di Ubuntu Server untuk menyimpan konfigurasi dan data filter AdGuard Home. Tujuannya agar saat kontainer Docker diperbarui atau di-restart, pengaturan AdGuard kamu tidak hilang.
+9. Buat folder di Ubuntu Server untuk menyimpan konfigurasi dan data filter AdGuard Home. Tujuannya agar saat kontainer Docker diperbarui atau di-restart, pengaturan AdGuard kamu tidak hilang.
 
    Buat folder tersebut dengan perintah ini:
 
         mkdir -p ~/adguardhome/work ~/adguardhome/conf
-9. Jalankan perintah Docker di bawah ini untuk mengunduh dan mengaktifkan AdGuard Home:
+10. Jalankan perintah Docker di bawah ini untuk mengunduh dan mengaktifkan AdGuard Home:
 
         docker run -d \
           --name adguardhome \
@@ -27,7 +31,7 @@
           -v "$HOME/adguardhome/conf:/opt/adguardhome/conf" \
           -p 53:53/tcp -p 53:53/udp \
           -p 80:80/tcp -p 443:443/tcp -p 443:443/udp \
-          -p 3030:3000/tcp \
+          -p 3030:3030/tcp \
           adguard/adguardhome
    
         keterangan:
